@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Day 1–3 Training Guide — Premium Wireless Pro</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f4f4f2;min-height:100vh}
+.g{max-width:480px;margin:0 auto;padding:0 0 2rem}
+.top-bar{background:#1a1a1a;color:#fff;padding:14px 16px 14px;border-radius:0 0 12px 12px;margin-bottom:6px}
+.brand{font-size:10px;font-weight:600;color:#f0b429;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
+.page-title{font-size:20px;font-weight:600;color:#fff}
+.page-sub{font-size:12px;color:#999;margin-top:2px}
+.progress-bar-wrap{padding:10px 0 0}
+.prog-label{display:flex;justify-content:space-between;font-size:11px;color:#888;margin-bottom:5px}
+.prog-track{height:5px;background:#333;border-radius:99px;overflow:hidden}
+.prog-fill{height:100%;background:#1D9E75;border-radius:99px;transition:width .4s}
+.legend{display:flex;flex-wrap:wrap;gap:7px;padding:10px 12px;background:#efefed;border-bottom:1px solid #ddd;margin-bottom:6px}
+.li{display:flex;align-items:center;gap:5px;font-size:11px;color:#555}
+.lic{width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0}
+.ia{background:#E6F1FB;color:#0C447C}
+.ip{background:#EAF3DE;color:#27500A}
+.iw{background:#FAEEDA;color:#633806}
+.iq{background:#FCEBEB;color:#791F1F}
+.ir{background:#EEEDFE;color:#3C3489}
+.day-nav{display:flex;gap:6px;padding:0 12px 8px;overflow-x:auto;scrollbar-width:none}
+.day-nav::-webkit-scrollbar{display:none}
+.day-btn{flex-shrink:0;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid #ccc;background:#fff;color:#666;transition:all .15s}
+.day-btn.active{background:#1a1a1a;color:#fff;border-color:#1a1a1a}
+.day-page{display:none}
+.day-page.active{display:block}
+.sb{margin:0 12px 8px;border-radius:12px;border:1px solid #ddd;background:#fff;overflow:hidden}
+.sh{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;cursor:pointer;user-select:none;background:#f7f7f5;gap:8px}
+.sh-left{display:flex;align-items:center;gap:8px;flex:1;min-width:0}
+.sh-title{font-size:13px;font-weight:600;color:#1a1a1a;line-height:1.3}
+.sh-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.stag{font-size:10px;font-weight:600;padding:3px 8px;border-radius:20px;white-space:nowrap}
+.t-pos{background:#E6F1FB;color:#0C447C}
+.t-ops{background:#EAF3DE;color:#27500A}
+.t-esp{background:#FAEEDA;color:#633806}
+.t-car{background:#EEEDFE;color:#3C3489}
+.t-sk{background:#FAECE7;color:#993C1D}
+.t-fr{background:#FCEBEB;color:#791F1F}
+.done-badge{width:18px;height:18px;border-radius:50%;background:#1D9E75;display:flex;align-items:center;justify-content:center;flex-shrink:0;opacity:0;transition:opacity .2s}
+.done-badge svg{width:10px;height:10px}
+.done-badge.show{opacity:1}
+.chev{font-size:11px;color:#999;transition:transform .2s}
+.chev.open{transform:rotate(180deg)}
+.sbody{border-top:1px solid #eee;display:none}
+.tabs{display:flex;border-bottom:1px solid #eee}
+.tab{flex:1;padding:9px 4px;font-size:12px;font-weight:600;text-align:center;cursor:pointer;color:#999;border-bottom:2px solid transparent;transition:all .15s}
+.tab.active{color:#1a1a1a;border-bottom-color:#1a1a1a}
+.tc{padding:14px 16px;display:none}
+.tc.active{display:block}
+.tl{list-style:none}
+.tl li{display:flex;align-items:flex-start;gap:8px;padding:6px 0;border-bottom:1px solid #f0f0ee;font-size:14px;color:#1a1a1a;line-height:1.45}
+.tl li:last-child{border-bottom:none}
+.dot{width:6px;height:6px;border-radius:50%;background:#ccc;flex-shrink:0;margin-top:7px}
+.sub-head{font-size:12px;font-weight:600;color:#666;margin-bottom:8px}
+.tri{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid #f0f0ee;font-size:14px;color:#1a1a1a;line-height:1.45}
+.tri:last-child{border-bottom:none}
+.tic{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0;margin-top:1px}
+.cfu{margin:12px 0 0;padding:12px 14px;background:#f7f7f5;border-left:3px solid #1D9E75}
+.cfu-t{font-size:11px;font-weight:600;color:#0F6E56;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.cfu-toggle{display:flex;align-items:flex-start;gap:8px;margin-top:4px;cursor:pointer;padding:4px 0}
+.cfu-toggle input{width:16px;height:16px;accent-color:#1D9E75;cursor:pointer;flex-shrink:0;margin-top:2px}
+.cfu-toggle span{font-size:13px;color:#1a1a1a;line-height:1.4}
+.refs{display:flex;gap:7px;margin-top:12px;flex-wrap:wrap}
+.rp{font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;background:#f0f0ee;border:1px solid #ddd;color:#666}.rp-link{background:#E6F1FB;border-color:#B5D4F4;color:#0C447C;text-decoration:none}.rp-link:hover{background:#B5D4F4}
+.foot{font-size:11px;color:#999;text-align:center;padding:16px 16px 0}
+</style>
+</head>
+<body>
+<div class="g">
+  <div class="top-bar">
+    <div class="brand">Premium Wireless Pro</div>
+    <div class="page-title">New Hire Training Guide</div>
+    <div class="page-sub">Sales Manager Checklist — Days 1–3</div>
+    <div class="progress-bar-wrap">
+      <div class="prog-label"><span>Overall progress</span><span id="prog-pct">0%</span></div>
+      <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="li"><div class="lic ia">?</div>Ask</div>
+    <div class="li"><div class="lic ip">+</div>Practice together</div>
+    <div class="li"><div class="lic iw">~</div>Walk through</div>
+    <div class="li"><div class="lic iq">!</div>Quiz</div>
+    <div class="li"><div class="lic ir">R</div>Review</div>
+  </div>
+
+  <div class="day-nav">
+    <button class="day-btn active" onclick="showDay('d1',this)">Day 1 — Foundations</button>
+    <button class="day-btn" onclick="showDay('d2',this)">Day 2 — Sales Process</button>
+    <button class="day-btn" onclick="showDay('d3',this)">Day 3 — Full Sales Flow</button>
+  </div>
+
+  <!-- DAY 1 -->
+  <div class="day-page active" id="d1">
+    <div class="sb">
+      <div class="sh" onclick="toggle(this)">
+        <div class="sh-left"><div class="done-badge" id="done-setup"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="sh-title">New Employee Setup &amp; Check-In</span></div>
+        <div class="sh-right"><span class="stag t-ops">Setup</span><span class="chev">▼</span></div>
+      </div>
+      <div class="sbody">
+        <div class="tabs"><div class="tab active" onclick="switchTab(this,'s1t1')">Manager tasks</div><div class="tab" onclick="switchTab(this,'s1t2')">Ways to train</div><div class="tab" onclick="switchTab(this,'s1t3')">Knowledge check</div></div>
+        <div class="tc active" id="s1t1"><ul class="tl"><li><div class="dot"></div>Verify new hire ID matches Scintilla In-Store profile</li><li><div class="dot"></div>Review WSP expectations and attendance policy</li><li><div class="dot"></div>Download apps (Walmart, Discord, Teams)</li><li><div class="dot"></div>Provide access to store keys or lockbox</li><li><div class="dot"></div>Practice check-in process in Scintilla In-Store and 360</li></ul><div class="refs"><a class="rp rp-link" href="https://premiumretail.sharepoint.com/sites/WalmartWirelessLeadership/Field%20Management/Forms/AllItems.aspx?id=%2Fsites%2FWalmartWirelessLeadership%2FField%20Management%2FAttendance%20Policy%2Epdf&parent=%2Fsites%2FWalmartWirelessLeadership%2FField%20Management" target="_blank">Attendance Policy ↗</a><a class="rp rp-link" href="https://premiumretail.sharepoint.com/sites/WalmartWirelessLeadership/Systems/Forms/AllItems.aspx?id=%2Fsites%2FWalmartWirelessLeadership%2FSystems%2FScintilla%20In%2DStore%20%2D%20Certification%20Completion%2Epdf&parent=%2Fsites%2FWalmartWirelessLeadership%2FSystems" target="_blank">Scintilla In-Store ↗</a><a class="rp rp-link" href="https://premiumretail.sharepoint.com/sites/WalmartWirelessLeadership/Field%20Management/Forms/AllItems.aspx?id=%2Fsites%2FWalmartWirelessLeadership%2FField%20Management%2FWireless%20Pro%20Expectations%2Epdf&parent=%2Fsites%2FWalmartWirelessLeadership%2FField%20Management" target="_blank">WSP Role ↗</a></div></div>
+        <div class="tc" id="s1t2"><div class="tri"><div class="tic ia">?</div>When should you notify your manager if you cannot work your shift?</div><div class="tri"><div class="tic ia">?</div>What systems do you use for checking in?</div><div class="tri"><div class="tic ia">?</div>What do you do if you lose a store key?</div><div class="tri"><div class="tic ip">+</div>I Do → We Do → You Do: Check in to Scintilla In-Store and 360</div><div class="tri"><div class="tic iq">!</div>Quick scenario quiz (late, call-out, lost key)</div></div>
+        <div class="tc" id="s1t3"><div class="cfu"><div class="cfu-t">Check for understanding</div><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Perform a practice check-in</span></label><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Explain the call-out process</span></label><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Demonstrate where they check in and out during a shift</span></label></div></div>
+      </div>
+    </div>
+
+    <div class="sb">
+      <div class="sh" onclick="toggle(this)">
+        <div class="sh-left"><div class="done-badge" id="done-ops"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="sh-title">Daily Operations</span></div>
+        <div class="sh-right"><span class="stag t-ops">Ops</span><span class="chev">▼</span></div>
+      </div>
+      <div class="sbody">
+        <div class="tabs"><div class="tab active" onclick="switchTab(this,'s2t1')">Manager tasks</div><div class="tab" onclick="switchTab(this,'s2t2')">Ways to train</div><div class="tab" onclick="switchTab(this,'s2t3')">Knowledge check</div></div>
+        <div class="tc active" id="s2t1"><ul class="tl"><li><div class="dot"></div>Print inventory</li><li><div class="dot"></div>Conduct PA</li><li><div class="dot"></div>Retrieve keys</li><li><div class="dot"></div>Clean demo devices and update fact flags</li><li><div class="dot"></div>Review daily check-out process and time reporting</li></ul><div class="refs"><a class="rp rp-link" href="https://premiumretail.sharepoint.com/sites/WalmartWirelessLeadership/Sales/Forms/AllItems.aspx?id=%2Fsites%2FWalmartWirelessLeadership%2FSales%2FWalmart%20PA%20Announcements%2Epdf&parent=%2Fsites%2FWalmartWirelessLeadership%2FSales" target="_blank">PAs ↗</a><span class="rp">Walmart App</span></div></div>
+        <div class="tc" id="s2t2"><div class="tri"><div class="tic ia">?</div>When should inventory be printed?</div><div class="tri"><div class="tic ia">?</div>How often should PA be made?</div><div class="tri"><div class="tic ip">+</div>Print inventory together and review available devices</div><div class="tri"><div class="tic ip">+</div>Demonstrate how to make a PA</div><div class="tri"><div class="tic iw">~</div>Walk through how to print fact flags</div></div>
+        <div class="tc" id="s2t3"><div class="cfu"><div class="cfu-t">Check for understanding</div><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Print inventory independently</span></label><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Make a practice PA</span></label><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Show how they would unlock a device from inventory</span></label></div></div>
+      </div>
+    </div>
+
+    <div class="sb">
+      <div class="sh" onclick="toggle(this)">
+        <div class="sh-left"><div class="done-badge" id="done-esp"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="sh-title">ESP</span></div>
+        <div class="sh-right"><span class="stag t-esp">System</span><span class="chev">▼</span></div>
+      </div>
+      <div class="sbody">
+        <div class="tabs"><div class="tab active" onclick="switchTab(this,'s3t1')">Manager tasks</div><div class="tab" onclick="switchTab(this,'s3t2')">Ways to train</div><div class="tab" onclick="switchTab(this,'s3t3')">Knowledge check</div></div>
+        <div class="tc active" id="s3t1"><ul class="tl"><li><div class="dot"></div>Run wireless applications</li><li><div class="dot"></div>Review identification requirements and required customer information</li><li><div class="dot"></div>Practice number porting</li><li><div class="dot"></div>Practice handling common application errors</li><li><div class="dot"></div>Locate and resume saved applications</li></ul><div class="refs"><a class="rp rp-link" href="https://premiumretail.sharepoint.com/sites/WalmartWirelessReps/SitePages/ESP-Tablet.aspx?web=1" target="_blank">ESP ↗</a><a class="rp rp-link" href="https://premiumretail.sharepoint.com/sites/WalmartWirelessReps/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FWalmartWirelessReps%2FShared%20Documents%2FSales%2FPorting%20Numbers%2Epdf&parent=%2Fsites%2FWalmartWirelessReps%2FShared%20Documents%2FSales" target="_blank">Porting Numbers ↗</a><a class="rp rp-link" href="https://premiumretail.sharepoint.com/sites/WalmartWirelessLeadership/Sales/Forms/AllItems.aspx?id=%2Fsites%2FWalmartWirelessLeadership%2FSales%2FWalmart%20Customer%20ID%20Requirements%2Epdf&parent=%2Fsites%2FWalmartWirelessLeadership%2FSales" target="_blank">ID Requirements ↗</a></div></div>
+        <div class="tc" id="s3t2"><div class="tri"><div class="tic ia">?</div>What information do you need to run an application?</div><div class="tri"><div class="tic ia">?</div>What identification may be required?</div><div class="tri"><div class="tic ia">?</div>What information is needed to port a phone number?</div><div class="tri"><div class="tic ip">+</div>Run practice applications in training mode</div><div class="tri"><div class="tic iw">~</div>Walk through where to find saved applications</div></div>
+        <div class="tc" id="s3t3"><div class="cfu"><div class="cfu-t">Check for understanding</div><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Run a practice application</span></label><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Demonstrate how to port a number</span></label><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Open an incomplete application</span></label></div></div>
+      </div>
+    </div>
+
+    <div class="sb">
+      <div class="sh" onclick="toggle(this)">
+        <div class="sh-left"><div class="done-badge" id="done-car"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="sh-title">Carrier Options</span></div>
+        <div class="sh-right"><span class="stag t-car">Carriers</span><span class="chev">▼</span></div>
+      </div>
+      <div class="sbody">
+        <div class="tabs"><div class="tab active" onclick="switchTab(this,'s4t1')">Manager tasks</div><div class="tab" onclick="switchTab(this,'s4t2')">Ways to train</div><div class="tab" onclick="switchTab(this,'s4t3')">Knowledge check</div></div>
+        <div class="tc active" id="s4t1"><p class="sub-head">Review AT&amp;T, Verizon, and T-Mobile:</p><ul class="tl"><li><div class="dot"></div>Plan types and features</li><li><div class="dot"></div>Activation and upgrade fees</li><li><div class="dot"></div>Device installment terms</li><li><div class="dot"></div>Promotional offers</li><li><div class="dot"></div>Carrier resources (SalesPro, Unboxed, carrier reps)</li></ul><div class="refs"><a class="rp rp-link" href="https://mst.att.com/" target="_blank">SalesPro ↗</a><span class="rp">Unboxed</span><a class="rp rp-link" href="https://premiumretail.sharepoint.com/sites/WalmartWirelessReps" target="_blank">WORC Pro ↗</a></div></div>
+        <div class="tc" id="s4t2"><div class="tri"><div class="tic ia">?</div>What fees should customers expect on their first bill?</div><div class="tri"><div class="tic ia">?</div>What is an installment plan?</div><div class="tri"><div class="tic ia">?</div>Where can you check the latest promotions?</div><div class="tri"><div class="tic ir">R</div>Review SalesPro, Unboxed, &amp; WORC Pro together</div><div class="tri"><div class="tic iw">~</div>Walk through example pricing scenarios</div></div>
+        <div class="tc" id="s4t3"><div class="cfu"><div class="cfu-t">Check for understanding</div><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Recommend a plan for a customer</span></label><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Explain the difference between two carriers</span></label><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Show where to find current promotions</span></label></div></div>
+      </div>
+    </div>
+
+    <div class="sb">
+      <div class="sh" onclick="toggle(this)">
+        <div class="sh-left"><div class="done-badge" id="done-pos1"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="sh-title">POS / Cash Register</span></div>
+        <div class="sh-right"><span class="stag t-pos">POS</span><span class="chev">▼</span></div>
+      </div>
+      <div class="sbody">
+        <div class="tabs"><div class="tab active" onclick="switchTab(this,'s5t1')">Manager tasks</div><div class="tab" onclick="switchTab(this,'s5t2')">Ways to train</div><div class="tab" onclick="switchTab(this,'s5t3')">Knowledge check</div></div>
+        <div class="tc active" id="s5t1"><p class="sub-head">Rep learns how to:</p><ul class="tl"><li><div class="dot"></div>Ring out wireless transactions</li><li><div class="dot"></div>Understand what items cannot be rung out</li><li><div class="dot"></div>Process prepaid and accessory purchases</li><li><div class="dot"></div>Issue customer cash back when applicable</li></ul><div class="refs"><a class="rp rp-link" href="https://premiumretail.sharepoint.com/sites/WalmartWirelessLeadership/Sales/Forms/AllItems.aspx?id=%2Fsites%2FWalmartWirelessLeadership%2FSales%2FDepartment%2087%20Accessories%2Epdf&parent=%2Fsites%2FWalmartWirelessLeadership%2FSales" target="_blank">Dept. 87 ↗</a><a class="rp rp-link" href="https://premiumretail.sharepoint.com/sites/WalmartWirelessLeadership/Sales/Forms/AllItems.aspx?id=%2Fsites%2FWalmartWirelessLeadership%2FSales%2FWalmart%20Cash%20Register%20Overview%2Epdf&parent=%2Fsites%2FWalmartWirelessLeadership%2FSales" target="_blank">Cash Register Overview ↗</a></div></div>
+        <div class="tc" id="s5t2"><div class="tri"><div class="tic ia">?</div>What items are Wireless Pros not allowed to ring out?</div><div class="tri"><div class="tic ia">?</div>What must be included in a POS transaction?</div><div class="tri"><div class="tic iw">~</div>Walk through a mock transaction</div><div class="tri"><div class="tic ip">+</div>Demonstrate ringing out a device and accessories</div><div class="tri"><div class="tic ir">R</div>Explain common POS restrictions</div></div>
+        <div class="tc" id="s5t3"><div class="cfu"><div class="cfu-t">Check for understanding</div><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Complete a practice checkout</span></label><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Ring out a device with accessories</span></label><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Explain when they should involve Walmart staff</span></label></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-page" id="d2">
+    <div class="sb">
+      <div class="sh" onclick="toggle(this)">
+        <div class="sh-left"><div class="done-badge" id="done-cex"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="sh-title">CExchange &amp; Carrier Trade-Ins</span></div>
+        <div class="sh-right"><span class="stag t-pos">POS</span><span class="chev">▼</span></div>
+      </div>
+      <div class="sbody">
+        <div class="tabs"><div class="tab active" onclick="switchTab(this,'s6t1')">Manager tasks</div><div class="tab" onclick="switchTab(this,'s6t2')">Ways to train</div><div class="tab" onclick="switchTab(this,'s6t3')">Knowledge check</div></div>
+        <div class="tc active" id="s6t1"><ul class="tl"><li><div class="dot"></div>Device eligibility and condition requirements</li><li><div class="dot"></div>Carrier promotional requirements</li><li><div class="dot"></div>Trade-in process</li><li><div class="dot"></div>Packaging and device return</li><li><div class="dot"></div>Trade-in timelines and credits</li></ul><div class="refs"><a class="rp rp-link" href="https://premiumretail.sharepoint.com/sites/WalmartWirelessLeadership/Sales/Forms/AllItems.aspx?id=%2Fsites%2FWalmartWirelessLeadership%2FSales%2FWireless%20Trade%2Din%20Training%2Epdf&parent=%2Fsites%2FWalmartWirelessLeadership%2FSales" target="_blank">CExchange ↗</a><a class="rp rp-link" href="https://tradein.att.com/" target="_blank">AT&amp;T Trade-In ↗</a></div></div>
+        <div class="tc" id="s6t2"><div class="tri"><div class="tic ia">?</div>What condition must a device be in to trade in?</div><div class="tri"><div class="tic ia">?</div>How do you determine the trade-in value?</div><div class="tri"><div class="tic ia">?</div>How long does a customer usually have to complete a trade-in via carrier?</div><div class="tri"><div class="tic iw">~</div>Walk through the trade-in process step by step</div><div class="tri"><div class="tic ir">R</div>Show where to check trade-in value</div></div>
+        <div class="tc" id="s6t3"><div class="cfu"><div class="cfu-t">Check for understanding</div><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Explain the trade-in process to you as the customer</span></label><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Identify where a device goes after trade-in is processed</span></label></div></div>
+      </div>
+    </div>
+
+    <div class="sb">
+      <div class="sh" onclick="toggle(this)">
+        <div class="sh-left"><div class="done-badge" id="done-bill"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="sh-title">First Bill &amp; Billing Expectations</span></div>
+        <div class="sh-right"><span class="stag t-pos">POS</span><span class="chev">▼</span></div>
+      </div>
+      <div class="sbody">
+        <div class="tabs"><div class="tab active" onclick="switchTab(this,'s7t1')">Manager tasks</div><div class="tab" onclick="switchTab(this,'s7t2')">Ways to train</div><div class="tab" onclick="switchTab(this,'s7t3')">Knowledge check</div></div>
+        <div class="tc active" id="s7t1"><p class="sub-head">Rep should be able to explain:</p><ul class="tl"><li><div class="dot"></div>Activation or upgrade fees</li><li><div class="dot"></div>Device installment charges</li><li><div class="dot"></div>Promotional credits</li><li><div class="dot"></div>Proration</li><li><div class="dot"></div>Autopay discounts</li><li><div class="dot"></div>Carrier or employer discounts</li></ul><div class="refs"><a class="rp rp-link" href="https://premiumretail.sharepoint.com/sites/WalmartWirelessLeadership/Sales/Forms/AllItems.aspx?id=%2Fsites%2FWalmartWirelessLeadership%2FSales%2FSetting%20Bill%20Expectations%2Epdf&parent=%2Fsites%2FWalmartWirelessLeadership%2FSales" target="_blank">Setting Bill Expectations ↗</a></div></div>
+        <div class="tc" id="s7t2"><div class="tri"><div class="tic ia">?</div>What is proration?</div><div class="tri"><div class="tic ia">?</div>Why might a customer's first bill be higher?</div><div class="tri"><div class="tic ia">?</div>What discounts may apply to a wireless bill?</div><div class="tri"><div class="tic ir">R</div>Review sample carrier bills</div><div class="tri"><div class="tic ip">+</div>Break down each bill section: Plan, Installments, Fees, Promotions</div></div>
+        <div class="tc" id="s7t3"><div class="cfu"><div class="cfu-t">Check for understanding</div><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Explain a sample first bill</span></label><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Tell a customer why their first bill might be higher than expected</span></label></div></div>
+      </div>
+    </div>
+
+    <div class="sb">
+      <div class="sh" onclick="toggle(this)">
+        <div class="sh-left"><div class="done-badge" id="done-sk"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="sh-title">Sales Skills</span></div>
+        <div class="sh-right"><span class="stag t-sk">Skills</span><span class="chev">▼</span></div>
+      </div>
+      <div class="sbody">
+        <div class="tabs"><div class="tab active" onclick="switchTab(this,'s8t1')">Manager tasks</div><div class="tab" onclick="switchTab(this,'s8t2')">Ways to train</div><div class="tab" onclick="switchTab(this,'s8t3')">Knowledge check</div></div>
+        <div class="tc active" id="s8t1"><p class="sub-head">Focus on core selling behaviors:</p><ul class="tl"><li><div class="dot"></div>Engage customers throughout the store</li><li><div class="dot"></div>Ask discovery questions to identify needs</li><li><div class="dot"></div>Recommend devices, plans, and solutions</li><li><div class="dot"></div>Use carrier resources for support</li><li><div class="dot"></div>Address customer concerns</li><li><div class="dot"></div>Ensure customers leave with total solution</li></ul><div class="refs"><a class="rp rp-link" href="https://premiumretail.sharepoint.com/sites/WalmartWirelessLeadership/Sales/Forms/AllItems.aspx?id=%2Fsites%2FWalmartWirelessLeadership%2FSales%2FCoaching%20SCORE%20Sales%20Skills%2Epdf&parent=%2Fsites%2FWalmartWirelessLeadership%2FSales" target="_blank">SCORE ↗</a></div></div>
+        <div class="tc" id="s8t2"><div class="tri"><div class="tic ia">?</div>How can you start a conversation with a customer?</div><div class="tri"><div class="tic ia">?</div>What questions help you understand a customer's needs?</div><div class="tri"><div class="tic ia">?</div>Why is it important to ask questions before making a recommendation?</div><div class="tri"><div class="tic ip">+</div>Practice engaging customers throughout the store</div><div class="tri"><div class="tic ip">+</div>Practice handling objections</div></div>
+        <div class="tc" id="s8t3"><div class="cfu"><div class="cfu-t">Check for understanding</div><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Demonstrate how they would approach a customer</span></label><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Ask discovery questions to identify needs</span></label><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Recommend a device and plan</span></label></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day-page" id="d3">
+    <div class="sb">
+      <div class="sh" onclick="toggle(this)">
+        <div class="sh-left"><div class="done-badge" id="done-ts"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="sh-title">Total Solution</span></div>
+        <div class="sh-right"><span class="stag t-pos">POS</span><span class="chev">▼</span></div>
+      </div>
+      <div class="sbody">
+        <div class="tabs"><div class="tab active" onclick="switchTab(this,'s9t1')">Manager tasks</div><div class="tab" onclick="switchTab(this,'s9t2')">Ways to train</div><div class="tab" onclick="switchTab(this,'s9t3')">Knowledge check</div></div>
+        <div class="tc active" id="s9t1"><ul class="tl"><li><div class="dot"></div>Accessories (Dept. 87)</li><li><div class="dot"></div>Wearables</li><li><div class="dot"></div>Prepaid device activations</li><li><div class="dot"></div>Equipment protection options</li><li><div class="dot"></div>Filing protection claims</li></ul><div class="refs"><a class="rp rp-link" href="https://premiumretail.sharepoint.com/sites/WalmartWirelessLeadership/Sales/Forms/AllItems.aspx?id=%2Fsites%2FWalmartWirelessLeadership%2FSales%2FDepartment%2087%20Accessories%2Epdf&parent=%2Fsites%2FWalmartWirelessLeadership%2FSales" target="_blank">Dept. 87 ↗</a><a class="rp rp-link" href="https://tradein.att.com/" target="_blank">AT&amp;T Trade-In ↗</a></div></div>
+        <div class="tc" id="s9t2"><div class="tri"><div class="tic ia">?</div>Why should we engage customers looking at accessories?</div><div class="tri"><div class="tic ia">?</div>What items are found in Department 87?</div><div class="tri"><div class="tic ia">?</div>What are the benefits of equipment protection?</div><div class="tri"><div class="tic ip">+</div>I Do → We Do → You Do: Locate items using the Walmart app</div><div class="tri"><div class="tic ir">R</div>Review protection options</div></div>
+        <div class="tc" id="s9t3"><div class="cfu"><div class="cfu-t">Check for understanding</div><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Recommend accessories for a phone purchase</span></label><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Explain protection benefits to a customer</span></label></div></div>
+      </div>
+    </div>
+
+    <div class="sb">
+      <div class="sh" onclick="toggle(this)">
+        <div class="sh-left"><div class="done-badge" id="done-fr"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg></div><span class="sh-title">Fraud &amp; Protecting Customer Information</span></div>
+        <div class="sh-right"><span class="stag t-fr">Fraud</span><span class="chev">▼</span></div>
+      </div>
+      <div class="sbody">
+        <div class="tabs"><div class="tab active" onclick="switchTab(this,'s10t1')">Manager tasks</div><div class="tab" onclick="switchTab(this,'s10t2')">Ways to train</div><div class="tab" onclick="switchTab(this,'s10t3')">Knowledge check</div></div>
+        <div class="tc active" id="s10t1"><p class="sub-head">Review with the rep:</p><ul class="tl"><li><div class="dot"></div>Fraud red flags</li><li><div class="dot"></div>Best practices for handling customer information</li><li><div class="dot"></div>Dos &amp; don'ts for handling CPNI &amp; PPI</li></ul><div class="refs"><a class="rp rp-link" href="https://premiumretail.sharepoint.com/sites/WalmartWirelessLeadership/Field%20Management/Forms/AllItems.aspx?id=%2Fsites%2FWalmartWirelessLeadership%2FField%20Management%2FPerforming%20with%20Integrity%2Epdf&parent=%2Fsites%2FWalmartWirelessLeadership%2FField%20Management" target="_blank">Performing with Integrity ↗</a></div></div>
+        <div class="tc" id="s10t2"><div class="tri"><div class="tic ia">?</div>What are some common fraud red flags?</div><div class="tri"><div class="tic ia">?</div>What types of information are considered CPNI or PPI?</div><div class="tri"><div class="tic ia">?</div>What should you do if you suspect fraud?</div><div class="tri"><div class="tic ir">R</div>Review examples of fraud scenarios</div><div class="tri"><div class="tic iw">~</div>Walk through proper ID verification</div><div class="tri"><div class="tic ip">+</div>Discuss Walmart and Premium policies on customer data</div></div>
+        <div class="tc" id="s10t3"><div class="cfu"><div class="cfu-t">Check for understanding</div><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Identify fraud risks in a sample scenario</span></label><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Demonstrate how to verify a customer's ID</span></label><label class="cfu-toggle"><input type="checkbox" onchange="updateProgress()"><span>Explain how to protect customer information</span></label></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">Topic: New Hire Checklist &nbsp;·&nbsp; System: Scintilla In-Store, ESP, POS &nbsp;·&nbsp; 03/04/2026</div>
+</div>
+
+<script>
+const sectionMap={
+  'done-setup':'s1t3','done-ops':'s2t3','done-esp':'s3t3','done-car':'s4t3',
+  'done-pos1':'s5t3','done-cex':'s6t3','done-bill':'s7t3','done-sk':'s8t3',
+  'done-ts':'s9t3','done-fr':'s10t3'
+};
+function toggle(sh){
+  const body=sh.nextElementSibling;
+  const chev=sh.querySelector('.chev');
+  const open=body.style.display==='block';
+  body.style.display=open?'none':'block';
+  chev.classList.toggle('open',!open);
+}
+function switchTab(tab,cid){
+  const block=tab.closest('.sb');
+  block.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  block.querySelectorAll('.tc').forEach(c=>c.classList.remove('active'));
+  tab.classList.add('active');
+  document.getElementById(cid).classList.add('active');
+}
+function showDay(id,btn){
+  document.querySelectorAll('.day-page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.day-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+function updateProgress(){
+  const all=document.querySelectorAll('.cfu-toggle input[type=checkbox]');
+  const checked=document.querySelectorAll('.cfu-toggle input[type=checkbox]:checked');
+  const pct=all.length?Math.round(checked.length/all.length*100):0;
+  document.getElementById('prog-fill').style.width=pct+'%';
+  document.getElementById('prog-pct').textContent=pct+'%';
+  for(const[badgeId,tabId]of Object.entries(sectionMap)){
+    const tab=document.getElementById(tabId);
+    if(!tab)continue;
+    const boxes=tab.querySelectorAll('input[type=checkbox]');
+    const allChecked=[...boxes].every(b=>b.checked);
+    const badge=document.getElementById(badgeId);
+    if(badge)badge.classList.toggle('show',allChecked&&boxes.length>0);
+  }
+}
+</script>
+</body>
+</html>
